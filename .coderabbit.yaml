@@ -1,0 +1,6 @@
+version: 1
+reviews:
+  auto_review:
+    enabled: true
+    base_branches:
+      - ".*"
