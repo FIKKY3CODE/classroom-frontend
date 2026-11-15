@@ -13,7 +13,7 @@ import {
   SelectContent, 
   SelectTrigger 
 } from '@/components/ui/select'
-import { DEPARTMENTS_LIST } from '@/constants'
+import { DEPARTMENT_OPTIONS} from '@/constants'
 import { CreateButton } from '@/components/refine-ui/buttons/create'
 import { Subject } from '@/types'
 import { useTable } from '@refinedev/react-table'
@@ -65,7 +65,7 @@ const SubjectsList = () => {
 
       {
         id: "department",
-        accessorKey: "department",
+        accessorKey: "department.name",
         //size is used to set the width of the column, but it is not a hard limit. The column will expand to fit the content if necessary.
         size: 150,
         header: () => <p className="column-title ">Department</p>,
@@ -136,7 +136,7 @@ const SubjectsList = () => {
                             <SelectItem value="all">
                                 All Departments
                             </SelectItem>
-                            {DEPARTMENTS_LIST.map(dept => (
+                            {DEPARTMENT_OPTIONS.map(dept => (
                                 <SelectItem key={dept.value} value={dept.value}>
                                     {dept.label}
                                 </SelectItem>
